@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdk 34
+    defaultConfig {
+        minSdkVersion 25
+        targetSdk 34
+        versionCode 10
+        versionName '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    namespace "com.octopus.android.bluetooth"
+}
+
+dependencies {
+    //implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+
+    implementation('com.zhuchao.android:libBaseUtils:2.2.1@aar')//框架基础类
+    //implementation('com.zhuchao.android:libCameraUtils:1.0@aar')//相机控制
+    ///implementation('com.zhuchao.android:libDecodeCore:1.6@aar')//播放器的核心解码库
+    implementation('com.zhuchao.android:libDNetUtils:2.1@aar')//网络接口
+    implementation('com.zhuchao.android:libFOSUtils:1.4.2@aar')//平台接口
+    implementation('com.zhuchao.android:libSessionUtils:2.9.1@aar')//会话管理、杂项
+}
